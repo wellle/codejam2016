@@ -1,0 +1,38 @@
+K=1 => just look at 1
+
+K=2
+C=1  C=2       C=3
+01   01 23     01 23  45 67
+GG   GG GG     GG GG  GG GG
+LG   LG GG     LG GG  GG GG
+GL   GG GL     GG GG  GG GL
+LL   LL LL     LL LL  LL LL
+     || |\ 11  || ||  || |\ 111
+     || \ 10   || ||  || \ 110
+     |\ 01     || ||  |\ 101
+     \ 00      || ||  \ 100
+               || |\ 011
+               || \ 010
+               |\ 001
+               \ 000
+
+K=3
+C=1   C=2             C=3
+012   012 345 678     012 345 678  9...
+GGG   GGG GGG GGG     GGG GGG GGG  GGG GGG GGG  GGG GGG GGG 
+GGL   GGG GGG GGL     GGG GGG GGG  GGG GGG GGG  GGG GGG GGL
+GLG   GGG GLG GGG     GGG GGG GGG  GGG GLG GGG  GGG GGG GGG 
+GLL   GGG GLL GLL     GGG GGG GGG  GGG GLL GLL  GGG GLL GLL 
+LGG   LGG GGG GGG     LGG GGG GGG  GGG GGG GGG  GGG GGG GGG 
+LGL   LGL GGG LGL     LGL GGG LGL  GGG GGG GGG  LGL GGG LGL 
+LLG   LLG LLG GGG     LLG LLG GGG  LLG LLG GGG  GGG GGG GGG 
+LLL   LLL LLL LLL     LLL LLL LLL  LLL LLL LLL  LLL LLL LLL 
+      ||| ||| ||\ 22
+      ||| ||| |\ 21
+      ||| ||| \ 20
+      ||| ||\ 12
+      ||| |\ 11
+      ||| \ 10
+      ||\ 02
+      |\ 01
+      \ 00
