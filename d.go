@@ -41,6 +41,7 @@ func d(K, C, S int) string {
 	// return up to S positions
 	// each position can check up to C tiles of the original sequence
 	// we need to check all K tiles
+
 	if S*C < K {
 		return "IMPOSSIBLE"
 	}
@@ -56,7 +57,7 @@ func d(K, C, S int) string {
 			n, b = 0, 0
 		}
 	}
-	if n > 0 {
+	if b > 0 {
 		numbers = append(numbers, strconv.Itoa(n+1))
 	}
 
