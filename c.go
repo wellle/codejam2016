@@ -41,10 +41,10 @@ var (
 )
 
 func c(N, J int) {
-	iterate(N, J, []int{0, 0, 0, 0, 0, 0, 0, 0, 0}, "", true)
+	iterate(N, J, []int{0, 0, 0, 0, 0, 0, 0, 0, 0}, "", "1")
 }
 
-func iterate(left, limit int, values []int, s string, one bool) int {
+func iterate(left, limit int, values []int, s, next string) int {
 	if limit == 0 {
 		return 0
 	}
@@ -69,22 +69,14 @@ func iterate(left, limit int, values []int, s string, one bool) int {
 	v := []int{}
 	for i, b := range bases {
 		v = append(v, values[i]*b%P)
-	}
-
-	if one { // TODO: make string
-		for i, _ := range v {
+		if next == "1" {
 			v[i]++
 		}
-		s += "1"
-	} else {
-		s += "0"
 	}
 
-	left--
-	found := iterate(left, limit, v, s, true)
-	limit -= found
-	if left > 1 {
-		found += iterate(left, limit, v, s, false)
+	found := iterate(left-1, limit, v, s+next, "1")
+	if left > 2 {
+		found += iterate(left-1, limit-found, v, s+next, "0")
 	}
 	return found
 }
